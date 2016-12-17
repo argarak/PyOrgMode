@@ -707,6 +707,7 @@ class OrgDataStructure(OrgElement):
                 except AttributeError:
                     pass
                 else: # Handle it
+                    current_todo = current_todo.rstrip()
                     if current_todo in todo_list:
                         new_todo = OrgTodo(node.heading, node.todo, tags=node.tags,priority=node.priority, node=node)
                         results_list.append(new_todo)
